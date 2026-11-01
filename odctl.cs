@@ -23,8 +23,8 @@ internal class ODCtl {
     internal const string FileSyncHelperExe = "FileSyncHelper.exe";
     internal static string OneDrivePath = "";
     internal static string LocalAppDataPath = Environment.GetEnvironmentVariable("LocalAppData") + "\\Microsoft\\OneDrive\\";
-    internal static string ProgramFiles32Path = Environment.GetEnvironmentVariable("ProgramFiles(x86)") + "\\Microsoft OneDrive\\";
     internal static string ProgramFiles64Path = Environment.GetEnvironmentVariable("ProgramW6432") + "\\Microsoft OneDrive\\";
+    internal static string ProgramFiles32Path = Environment.GetEnvironmentVariable("ProgramFiles(x86)") + "\\Microsoft OneDrive\\";
     internal const string StartOpts = "/background";
     internal const string StopOpts = "/background /shutdown";
     internal const int RestartWait = 5000;
