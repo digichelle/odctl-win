@@ -16,7 +16,7 @@ internal class ODCtl {
     internal const string ProgramName = "ODCtl";
     internal const string Description = "OneDrive command-line control for Windows";
     internal const string Copyright = "Copyright © 2026 Michelle Catherine Marcó";
-    internal const string License = "MIT License: https://opensource.org/licenses/MIT";
+    internal const string License = "MIT License: https://opensource.org/license/MIT";
     internal const string OneDriveExe = "OneDrive.exe";
     internal const string OneDriveSyncServiceExe = "OneDrive.Sync.Service.exe";
     internal const string FileCoAuthExe = "FileCoAuth.exe";
