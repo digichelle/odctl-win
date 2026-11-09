@@ -11,7 +11,7 @@
   <Description>OneDrive command-line control for Windows</Description>
   <AssemblyVersion>1.0.0.0</AssemblyVersion>
   <VersionPrefix>1.0.0</VersionPrefix>
-  <VersionSuffix>stable-20261101-01</VersionSuffix>
+  <VersionSuffix>20261109-01</VersionSuffix>
   <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
   <Company>Michelle Catherine Marcó</Company>
   <Copyright>Copyright © 2026 Michelle Catherine Marcó</Copyright>

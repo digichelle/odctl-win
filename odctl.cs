@@ -13,21 +13,33 @@ namespace ODCtl;
 // Initialize "global" variables and implement functions
 internal class ODCtl {
 
+    // Program information
     internal const string ProgramName = "ODCtl";
     internal const string Description = "OneDrive command-line control for Windows";
     internal const string Copyright = "Copyright © 2026 Michelle Catherine Marcó";
     internal const string License = "MIT License: https://opensource.org/license/MIT";
+    internal static string VersionText =
+        ProgramName + " - " + Description + Environment.NewLine +
+        "Version " + Application.ProductVersion + Environment.NewLine +
+        Copyright + Environment.NewLine +
+        License;
+
+    // Executable and path information
     internal const string OneDriveExe = "OneDrive.exe";
     internal const string OneDriveSyncServiceExe = "OneDrive.Sync.Service.exe";
     internal const string FileCoAuthExe = "FileCoAuth.exe";
     internal const string FileSyncHelperExe = "FileSyncHelper.exe";
-    internal static string OneDrivePath = "";
+    internal static string OneDrivePath = String.Empty;
     internal static string LocalAppDataPath = Environment.GetEnvironmentVariable("LocalAppData") + "\\Microsoft\\OneDrive\\";
     internal static string ProgramFiles64Path = Environment.GetEnvironmentVariable("ProgramW6432") + "\\Microsoft OneDrive\\";
     internal static string ProgramFiles32Path = Environment.GetEnvironmentVariable("ProgramFiles(x86)") + "\\Microsoft OneDrive\\";
+
+    // Control parameters
     internal const string StartOpts = "/background";
     internal const string StopOpts = "/background /shutdown";
     internal const int RestartWait = 5000;
+
+    // Mode flags
     internal static bool CustomPathEnabled = false;
     internal static bool DryRunMode = false;
     internal static bool QuietMode = false;
@@ -271,10 +283,7 @@ internal class ODCtl {
 // Implement custom version action
 public sealed class CustomVersion : SynchronousCommandLineAction {
     public override int Invoke(ParseResult PR) {
-        PR.InvocationConfiguration.Output.WriteLine(ODCtl.ProgramName + " - " + ODCtl.Description);
-        PR.InvocationConfiguration.Output.WriteLine("Version " + Application.ProductVersion);
-        PR.InvocationConfiguration.Output.WriteLine(ODCtl.Copyright);
-        PR.InvocationConfiguration.Output.WriteLine(ODCtl.License);
+        PR.InvocationConfiguration.Output.WriteLine(ODCtl.VersionText);
         return 0;
     }
 }
@@ -397,10 +406,7 @@ internal class Program {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
 
         // If verbose mode enabled, write program information
-        ODCtl.VerboseMessageLine(ODCtl.ProgramName + " - " + ODCtl.Description);
-        ODCtl.VerboseMessageLine("Version " + Application.ProductVersion);
-        ODCtl.VerboseMessageLine(ODCtl.Copyright);
-        ODCtl.VerboseMessageLine(ODCtl.License);
+        ODCtl.VerboseMessageLine(ODCtl.VersionText);
         ODCtl.VerboseMessageLine();
 
         // Automatically detect and set OneDrive path (can be overriden with --path)

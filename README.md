@@ -7,6 +7,8 @@ This program adds command-line control to the official OneDrive for Windows clie
 
 It’s written in C# because ~~I love pain~~ it was a good excuse to learn the language. If that seems like overkill, that’s because it is. A simpler [batch file variant](https://github.com/digichelle/odctl-cmd) exists, and that may be all you need.
 
+[Linux](https://github.com/digichelle/odctl-linux) and [Mac](https://github.com/digichelle/odctl-mac) variants also exist, should you need them.
+
 ## Why This Exists
 
 Storing development project files on OneDrive is probably a bad idea. The constant creation and deletion of build artifacts wreaks havoc on the service. If you do it anyway (as I do), I strongly suggest quitting OneDrive before working on a development project.
@@ -22,14 +24,14 @@ Unlike the batch file variant (and batch files in general), this program can exe
 ### Build and Run
 
 - Windows 10 or higher (.NET SDK 10.0) or Windows 11 (Visual Studio 2026)
-- [OneDrive for Windows](https://www.microsoft.com/en-us/microsoft-365/onedrive/download)
 - [.NET SDK 10.0](https://dotnet.microsoft.com/en-us/) or [Visual Studio 2026](https://visualstudio.microsoft.com) with the [.NET desktop development workload](https://learn.microsoft.com/en-us/visualstudio/install/modify-visual-studio?view=visualstudio)
+- [OneDrive for Windows](https://www.microsoft.com/en-us/microsoft-365/onedrive/download)
 
 ### Run Only
 
 - Windows 10 or higher
-- OneDrive for Windows
 - [.NET 10.0 Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/10.0/runtime)
+- OneDrive for Windows
 
 ## Build and Install
 
@@ -41,7 +43,7 @@ dotnet publish odctl-win.csproj /p:PublishProfile=<PROFILE>
 
 Alternatively, if you use Visual Studio, you can open the `odctl-win.slnx` solution file. Once open, right-click the `odctl-win` project in Solution Explorer, then click Publish. Select your desired publish profile, then click the Publish button.
 
-Possible profiles are `win-arm64`, `win-x64`, and `win-x86`. The compiled executable, `odctl.exe`, will be placed in `.\bin\Release\net10.0-windows\publish\<PROFILE>`.
+Possible profiles are `win-arm64`, `win-x64`, and `win-x86`. The compiled executable, `odctl.exe`, will be placed in `.\bin\release\<PROFILE>`.
 
 To install, copy `odctl.exe` to a directory in your PATH.
 
